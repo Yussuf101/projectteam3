@@ -1,0 +1,22 @@
+.app {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+img {
+  max-width: 800px;
+  max-height: 600px;
+}
+
+button {
+  padding: 10px;
+  outline:black;
+  border-radius: 4px;
+}
+
+img, button {
+margin-top: 20px;
+}
