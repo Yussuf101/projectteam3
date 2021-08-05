@@ -8,5 +8,7 @@ This is what it NOW looks like
 
 ![image](https://user-images.githubusercontent.com/82812348/128352923-22e0087c-cd30-4940-b255-8234ac404ec2.png)
 
+Click each image to change the cat shown, randomly using an API
+
 
 Not bad
