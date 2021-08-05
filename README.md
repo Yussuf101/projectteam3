@@ -4,4 +4,9 @@ Basic bare bones for cat app
 
 Currently looks like this.
 
+This is what it NOW looks like
+
+![image](https://user-images.githubusercontent.com/82812348/128352923-22e0087c-cd30-4940-b255-8234ac404ec2.png)
+
+
 Not bad
