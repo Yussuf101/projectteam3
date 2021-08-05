@@ -1,28 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 
+'react-router-dom';
 import './App.css';
+import Home from './components/pages/Home';
+import Basket from './components/Basket';
+
 
 const apiKey ="56ef1e19-1fcb-4350-98d1-8fa0184f4ea9"
 const url='https://api.thecatapi.com/v1/images/search';
 
-// var data = JSON.stringify({
-//   "image_id": "9ccXTANkb",
-//   "sub_id": "your-user-1234"
-// });
-
-// var xhr = new XMLHttpRequest();
-// xhr.withCredentials = true;
-
-// xhr.addEventListener("readystatechange", function () {
-//   if (this.readyState === this.DONE) {
-//     console.log(this.responseText);
-//   }
-// });
-
-// xhr.open("POST", "https://api.thecatapi.com/v1/favourites");
-// xhr.setRequestHeader("content-type", "application/json");
-// xhr.setRequestHeader("x-api-key", "DEMO-API-KEY");
-
-// xhr.send(data);
 
 function App() {
   const [ catUrl, setCatUrl ] = useState("https://cdn2.thecatapi.com/images/9ch.jpg");
@@ -30,7 +17,7 @@ function App() {
   const [ catUrl2, setCatUrl2 ] = useState("https://cdn2.thecatapi.com/images/bfa.jpg");
   const [ catUrl3, setCatUrl3 ] = useState("https://cdn2.thecatapi.com/images/w6FeZ0g-C.jpg");
   const [ catUrl4, setCatUrl4 ] = useState("https://cdn2.thecatapi.com/images/MTc4MDM3NA.jpg");
-  const [ catUrl5, setCatUrl5 ] = useState("https://cdn2.thecatapi.com/images/5lHsgWS4p.jpg");
+  const [ catUrl5, setCatUrl5 ] = useState("https://cdn2.thecatapi.com/imajpg");
   const [ catUrl6, setCatUrl6 ] = useState("https://cdn2.thecatapi.com/images/MTU3MzYwNw.jpg");
   const [ catUrl7, setCatUrl7 ] = useState("https://cdn2.thecatapi.com/images/755.jpg");
   const [ catUrl8, setCatUrl8 ] = useState("https://cdn2.thecatapi.com/images/250.jpg");
@@ -138,6 +125,8 @@ function App() {
         }
         console.log("Cat URL: ", catUrl2);
 
+
+
         const getCat3 = () => {
           console.log("Hello world");
       
@@ -155,6 +144,8 @@ function App() {
             });
           }
           console.log("Cat URL: ", catUrl3);
+
+
 
           const getCat4 = () => {
             console.log("Hello world");
@@ -174,6 +165,8 @@ function App() {
             }
             console.log("Cat URL: ", catUrl4);
 
+
+
             const getCat5 = () => {
               console.log("Hello world");
           
@@ -191,6 +184,8 @@ function App() {
                 });
               }
               console.log("Cat URL: ", catUrl5);
+
+
 
               const getCat6 = () => {
                 console.log("Hello world");
@@ -249,6 +244,8 @@ function App() {
                     }
                     console.log("Cat URL: ", catUrl8);
 
+
+                    
                     const getCat9 = () => {
                       console.log("Hello world");
                   
@@ -256,7 +253,7 @@ function App() {
                         headers: {
                           "x-api-key": apiKey
                         }
-                      })
+                      }) 
                         .then((res)=> res.json())
                         .then((cats) => {
                           console.log("Cats: ", cats);
@@ -267,18 +264,26 @@ function App() {
                       }
                       console.log("Cat URL: ", catUrl9);
             
-          
+
         
-      
+
     
-  
+
 
 
 return (
-  
+
   <div className="app">
       <h1> Feline find</h1>
-      
+      <>
+        <Router>
+            <Navbar />
+            <Switch>
+                <Route path='/' exact component = {Home}/>
+            </Switch>
+        </Router>
+        </>
+    );
 
 
       <div className="img">
@@ -293,9 +298,11 @@ return (
         <img src={catUrl8} alt="" onClick={getCat8}/>
         <img src={catUrl9} alt=""onClick={getCat9} />
       </div>
-      
+      <Basket/>
 
     </div>
     );
   }
+
+
 export default App;
